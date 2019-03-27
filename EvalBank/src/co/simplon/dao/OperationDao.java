@@ -11,7 +11,7 @@ public class OperationDao extends Dao<Operation> {
 	
 	@Override
 	public Operation find(int id) {
-		String str = "select * from T_Operations where NumOp=?";
+		String str = "select * from T_Operations where NumAt=?";
 		PreparedStatement ps;
 		Operation compte = null;
 		try {
@@ -29,14 +29,14 @@ public class OperationDao extends Dao<Operation> {
 
 	@Override
 	public boolean create(Operation obj) {
-		String str = "INSERT INTO T_Operations (NumOp,Amount,NumCt) VALUES (?, ? ,? ,?);";
+		String str = "INSERT INTO T_Operations (NumOp,Amount,NumAt) VALUES (?, ? ,? );";
 		PreparedStatement ps;
 		boolean ok = false;
 		try {
 			ps = connection.prepareStatement(str);
 			ps.setInt(1, obj.getNumOp());
 			ps.setDouble(2,obj.getAmount());
-			ps.setInt(3, obj.getNumCt());
+			ps.setInt(3, obj.getNumAt());
 			ps.executeQuery();
 			ok = true;
 		} catch (SQLException e) {
@@ -47,7 +47,7 @@ public class OperationDao extends Dao<Operation> {
 
 	@Override
 	public boolean update(Operation obj) {		
-		String str = " update T_Operations set Amount=? where NumOp=?;";		
+		String str = " update T_Operations set Amount=? where NumAt=?;";		
 		PreparedStatement ps;
 		boolean ok = false;
 		try {

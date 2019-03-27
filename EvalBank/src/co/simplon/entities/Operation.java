@@ -4,17 +4,17 @@ public class Operation {
 	
 	private int NumOp;
 	private double Amount;
-	private int NumCt;
+	private int NumAt;
 	
-	public Operation(int numOp, double amount, int numCt) {
+	public Operation(int numOp, double amount, int numAt) {
 		this.NumOp = numOp;
 		this.Amount = amount;
-		this.NumCt = numCt;
+		this.NumAt = numAt;
 	}
 
 	@Override
 	public String toString() {
-		return "operation [numero d'operation=" + NumOp + ", Amount=" + Amount + ", Account number=" + NumCt+ "]";
+		return "operation [numero d'operation=" + NumOp + ", Amount=" + Amount + ", Account number=" + NumAt+ "]";
 	}
 
 	public int getNumOp() {
@@ -33,12 +33,12 @@ public class Operation {
 		this.Amount = Amount;
 	}
 
-	public int getNumCt() {
-		return NumCt;
+	public int getNumAt() {
+		return NumAt;
 	}
 
-	public void setNumCt(int NumCt) {
-		this.NumCt =NumCt;
+	public void setNumAt(int NumAt) {
+		this.NumAt =NumAt;
 	}	
 
 }

@@ -1,5 +1,6 @@
 package co.simplon.dao;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,7 +18,7 @@ public class AccountDao extends Dao<Account> {
 			ps.setInt(1,id);
 			ResultSet resultSet = ps.executeQuery();
 			if(resultSet.next()){
-				compte = new Account(resultSet.getInt(1),resultSet.getString(2),resultSet.getDouble(3),resultSet.getInt(4));
+				compte = new Account(resultSet.getInt(1),resultSet.getDate(2),resultSet.getDouble(3),resultSet.getInt(4));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -33,7 +34,7 @@ public class AccountDao extends Dao<Account> {
 		try {
 			ps = connection.prepareStatement(str);
 			ps.setInt(1, obj.getNumAt());
-			ps.setString(2,obj.getDateCreation());
+			ps.setDate(2,(Date) obj.getDateCreation());
 			ps.setDouble(3,obj.getBalance());
 			ps.setInt(4, obj.getIdCust());
 			ps.executeQuery();

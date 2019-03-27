@@ -1,12 +1,14 @@
 package co.simplon.entities;
 
+import java.util.Date;
+
 public class Account {
 	private int NumAt;
-	private String DateCreation;
+	private Date DateCreation;
 	private double Balance;
 	private int IdCust ; 
 	
-	public Account(int numAt, String dateCreation, double balance,int idCust) {
+	public Account(int numAt, Date dateCreation, double balance,int idCust) {
 		this.NumAt = numAt;
 		this.DateCreation = dateCreation;
 		this.Balance = balance ; 
@@ -26,11 +28,11 @@ public class Account {
 		this.NumAt = NumAt;
 	}
 
-	public String getDateCreation() {
+	public Date getDateCreation() {
 		return DateCreation;
 	}
 
-	public void setDateCreation(String DateCreation) {
+	public void setDateCreation(Date DateCreation) {
 		this.DateCreation = DateCreation;
 	}
 
